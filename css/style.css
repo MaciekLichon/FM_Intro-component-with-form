@@ -1,0 +1,263 @@
+/* COLORS */
+/* TYPE */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* COLORS */
+/* TYPE */
+body {
+  background-image: url("../images/bg-intro-mobile.png");
+  background-color: #ff7979;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  padding: 0 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.button {
+  color: white;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.938rem;
+  line-height: 1.73;
+}
+
+.button-trial {
+  border-radius: 10px;
+  background-color: #5e54a4;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+  padding: 1.125rem 4rem;
+}
+
+.button-trial span {
+  font-weight: 700;
+}
+
+.button-submit {
+  background-color: #38cc8b;
+  text-transform: uppercase;
+  padding: 0.938rem;
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+  border-radius: 5px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: 0.2s;
+}
+
+.button-submit:hover {
+  background-color: #77e2b3;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("../images/bg-intro-desktop.png");
+  }
+  .container {
+    flex-direction: row;
+    align-items: center;
+    min-height: 100%;
+    gap: 30px;
+  }
+}
+
+.hero {
+  text-align: center;
+  padding-top: 5.5rem;
+}
+
+.hero .hero__title {
+  font-size: 1.75rem;
+  line-height: 1.29;
+  letter-spacing: -0.29px;
+  margin-bottom: 1rem;
+}
+
+.hero .hero__description {
+  line-height: 1.63;
+  font-weight: 500;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 4.25rem;
+}
+
+.form {
+  background-color: white;
+  padding: 1.5rem;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+  border-radius: 10px;
+  color: #3d3b48;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form .form__input {
+  font-size: 0.875rem;
+  line-height: 1.86;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  opacity: 0.75;
+  padding: 0.938rem 1.188rem;
+  border: 1px solid #DEDEDE;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.form .form__input:focus {
+  border: 1px solid #5e54a4;
+  outline: none;
+  opacity: 1;
+}
+
+.form .form__errorMsg {
+  color: #ff7979;
+  font-size: 0.688rem;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: right;
+  margin-top: 0.375rem;
+  display: none;
+}
+
+.form .form__inputContainer.error {
+  position: relative;
+}
+
+.form .form__inputContainer.error .form__errorMsg {
+  display: block;
+}
+
+.form .form__inputContainer.error .form__input {
+  border: 2px solid #ff7979;
+  color: #ff7979;
+  opacity: 1;
+}
+
+.form .form__inputContainer.error .form__input::-moz-placeholder {
+  visibility: hidden;
+}
+
+.form .form__inputContainer.error .form__input::placeholder {
+  visibility: hidden;
+}
+
+.form .form__inputContainer.error::after {
+  content: url("../images/icon-error.svg");
+  position: absolute;
+  top: 18px;
+  right: 27px;
+}
+
+.form .form__terms {
+  margin-top: -0.5rem;
+  text-align: center;
+  font-size: 0.688rem;
+  font-weight: 500;
+  line-height: 1.91;
+  padding: 0 1rem;
+  color: #bab7d4;
+}
+
+.form .form__terms .form__termsLink {
+  color: #ff7979;
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .hero, .formContainer {
+    flex: 1;
+    padding: 0;
+  }
+  .hero {
+    text-align: left;
+  }
+  .hero .hero__title {
+    font-size: 3.125rem;
+    line-height: 1.1;
+    letter-spacing: -0.52px;
+    margin-bottom: 0.688rem;
+  }
+  .form {
+    gap: 1.25rem;
+    padding: 2.5rem;
+  }
+  .form .form__input {
+    padding: 0.938rem 2rem;
+  }
+  .form .form__terms {
+    margin-top: -0.75rem;
+  }
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvdmFyaWFibGVzLnNjc3MiLCIuLi9zYXNzL3Jlc2V0LnNjc3MiLCJzdHlsZS5jc3MiLCIuLi9zYXNzL2dlbmVyYWwuc2NzcyIsIi4uL3Nhc3Mvc3R5bGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFDQSxXQUFBO0FBUUEsU0FBQTtBQ1RBOztDQ0lDO0FEREQ7RUFDRSxzQkFBc0I7QUNHeEI7O0FEREE7O0NDS0M7QURGRDtFQUNFLFNBQVM7QUNJWDs7QURGQTs7Q0NNQztBREhEO0VBQ0UsWUFBWTtBQ0tkOztBREhBOzs7O0NDU0M7QURKRDtFQUVFLG1DQUFtQztBQ0tyQzs7QURIQTs7Q0NPQztBREpEO0VBQ0UsY0FBYztFQUNkLGVBQWU7QUNNakI7O0FESkE7O0NDUUM7QURMRDtFQUNFLGFBQWE7QUNPZjs7QURMQTs7Q0NTQztBRE5EO0VBQ0UseUJBQXlCO0FDUTNCOztBRE5BOztDQ1VDO0FEUEQ7RUFDRSxrQkFBa0I7QUNTcEI7O0FGMURBLFdBQUE7QUFRQSxTQUFBO0FHUEE7RUFDRSxzREFBc0Q7RUFDdEQseUJIRDhCO0VHRTlCLDRCQUE0QjtFQUM1QixzQkFBc0I7RUFFdEIsa0NIRWdDO0VHRGhDLGVIR2U7RUdGZixnQkhtQmM7RUdsQmQsWUhUZ0M7RUdVaEMsaUJBQWlCO0FENkRuQjs7QUMxREE7RUFDRSxhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLFNBQVM7RUFFVCxpQkFBaUI7RUFDakIsY0FBYztBRDREaEI7O0FDekRBO0VBQ0UsWUh2QmdDO0VHd0JoQyxZQUFZO0VBQ1osZ0JBQWdCO0VBQ2hCLGVBQWU7RUFDZixtQkhUbUI7RUdVbkIsaUJIVGU7QUVxRWpCOztBQ3pEQTtFQUNFLG1CQUFtQjtFQUNuQix5Qkg5QitCO0VHK0IvQiw4Q0FBOEM7RUFDOUMsc0JBQXNCO0FENER4Qjs7QUNoRUE7RUFNUyxnQkhQSztBRXFFZDs7QUMzREE7RUFDRSx5Qkh2QytCO0VHd0MvQix5QkFBeUI7RUFDekIsaUJBQWlCO0VBQ2pCLHVEQUF1RDtFQUN2RCxrQkFBa0I7RUFDbEIsZ0JIakJXO0VHa0JYLG1CQUFtQjtFQUNuQixnQkFBZ0I7QUQ4RGxCOztBQ3RFQTtFQVdJLHlCQUF3QztBRCtENUM7O0FDM0RBO0VBRUU7SUFDRSx1REFBdUQ7RUQ2RHpEO0VDMURBO0lBQ0UsbUJBQW1CO0lBQ25CLG1CQUFtQjtJQUNuQixnQkFBZ0I7SUFDaEIsU0FBUztFRDREWDtBQUNGOztBRTVIQTtFQUNFLGtCQUFrQjtFQUNsQixtQkFBbUI7QUYrSHJCOztBRWpJQTtFQUtJLGtCSk1lO0VJTGYsaUJKTVk7RUlMWix1QkFBdUI7RUFDdkIsbUJBQW1CO0FGZ0l2Qjs7QUV4SUE7RUFZSSxpQkpIYTtFSUliLGdCSmFXO0FFbUhmOztBRTVIQTtFQUNFLGFBQWE7RUFDYixzQkFBc0I7RUFDdEIsV0FBVztFQUNYLHVCQUF1QjtBRitIekI7O0FFNUhBO0VBQ0UsdUJKM0JnQztFSTRCaEMsZUFBZTtFQUNmLDhDQUE4QztFQUM5QyxtQkFBbUI7RUFDbkIsY0ozQjRCO0VJNkI1QixhQUFhO0VBQ2Isc0JBQXNCO0VBQ3RCLFNBQVM7QUY4SFg7O0FFdklBO0VBWUksbUJKakJlO0VJa0JmLGlCSmpCVztFSWtCWCxnQkpYUztFSVlULHNCQUFzQjtFQUN0QixhQUFhO0VBQ2IsMEJBQTBCO0VBQzFCLHlCQUF5QjtFQUN6QixrQkFBa0I7RUFDbEIsV0FBVztBRitIZjs7QUVuSkE7RUF1Qk0seUJKOUMyQjtFSStDM0IsYUFBYTtFQUNiLFVBQVU7QUZnSWhCOztBRXpKQTtFQThCSSxjSnZENEI7RUl3RDVCLG1CSmpDZ0I7RUlrQ2hCLGdCSjlCVztFSStCWCxnQkFBZ0I7RUFDaEIsaUJBQWlCO0VBQ2pCLG9CQUFvQjtFQUNwQixhQUFhO0FGK0hqQjs7QUVuS0E7RUF3Q0ksa0JBQWtCO0FGK0h0Qjs7QUV2S0E7RUEyQ00sY0FBYztBRmdJcEI7O0FFM0tBO0VBOENNLHlCSnZFMEI7RUl3RTFCLGNKeEUwQjtFSXlFMUIsVUFBVTtBRmlJaEI7O0FFakxBO0VBa0RRLGtCQUFrQjtBRm1JMUI7O0FFckxBO0VBa0RRLGtCQUFrQjtBRm1JMUI7O0FFckxBO0VBdURNLHdDQUF3QztFQUN4QyxrQkFBa0I7RUFDbEIsU0FBUztFQUNULFdBQVc7QUZrSWpCOztBRTVMQTtFQStESSxtQkFBbUI7RUFDbkIsa0JBQWtCO0VBQ2xCLG1CSm5FZ0I7RUlvRWhCLGdCSmhFVztFSWlFWCxpQkpwRVk7RUlxRVosZUFBZTtFQUNmLGNBQTZCO0FGaUlqQzs7QUV0TUE7RUF3RU0sY0pqRzBCO0VJa0cxQixxQkFBcUI7QUZrSTNCOztBRTdIQTtFQUVFO0lBQ0UsT0FBTztJQUNQLFVBQVU7RUYrSFo7RUU1SEE7SUFDRSxnQkFBZ0I7RUY4SGxCO0VFL0hBO0lBSUksbUJKcEdzQjtJSXFHdEIsZ0JKcEdpQjtJSXFHakIsdUJBQXVCO0lBQ3ZCLHVCQUF1QjtFRjhIM0I7RUUxSEE7SUFDRSxZQUFZO0lBQ1osZUFBZTtFRjRIakI7RUU5SEE7SUFLSSxzQkFBc0I7RUY0SDFCO0VFaklBO0lBU0ksb0JBQW9CO0VGMkh4QjtBQUNGIiwiZmlsZSI6InN0eWxlLmNzcyJ9 */

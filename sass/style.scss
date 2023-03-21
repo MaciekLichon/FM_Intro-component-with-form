@@ -1,0 +1,137 @@
+@import './variables.scss';
+@import './reset.scss';
+@import './general.scss';
+
+.hero {
+  text-align: center;
+  padding-top: 5.5rem;
+
+  .hero__title {
+    font-size: $fs-header;
+    line-height: $lh-header;
+    letter-spacing: -0.29px;
+    margin-bottom: 1rem;
+  }
+
+  .hero__description {
+    line-height: $lh-regular;
+    font-weight: $fw-medium;
+  }
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-bottom: 4.25rem;
+}
+
+.form {
+  background-color: $clr-white;
+  padding: 1.5rem;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+  border-radius: 10px;
+  color: $clr-dark;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  
+  .form__input {
+    font-size: $fs-input;
+    line-height: $lh-input;
+    font-weight: $fw-bold;
+    letter-spacing: 0.25px;
+    opacity: 0.75;
+    padding: 0.938rem 1.188rem;
+    border: 1px solid #DEDEDE;
+    border-radius: 5px;
+    width: 100%;
+
+    &:focus {
+      border: 1px solid $clr-purple;
+      outline: none;
+      opacity: 1;
+    }
+  }
+  
+  .form__errorMsg {
+    color: $clr-red;
+    font-size: $fs-accent;
+    font-weight: $fw-medium;
+    line-height: 1.5;
+    text-align: right;
+    margin-top: 0.375rem;
+    display: none;
+  }
+
+  .form__inputContainer.error {
+    position: relative;
+
+    .form__errorMsg { 
+      display: block; 
+    }
+    .form__input {
+      border: 2px solid $clr-red;
+      color: $clr-red;
+      opacity: 1;
+      &::placeholder {
+        visibility: hidden;
+      }
+    }
+
+    &::after {
+      content: url('../images/icon-error.svg');
+      position: absolute;
+      top: 18px;
+      right: 27px;
+    }
+  }
+  
+  .form__terms {
+    margin-top: -0.5rem;
+    text-align: center;
+    font-size: $fs-accent;
+    font-weight: $fw-medium;
+    line-height: $lh-accent;
+    padding: 0 1rem;
+    color: rgba(186, 183, 212, 1);
+
+    .form__termsLink { 
+      color: $clr-red; 
+      text-decoration: none;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+
+  .hero, .formContainer {
+    flex: 1;
+    padding: 0;
+  }
+
+  .hero {
+    text-align: left;
+
+    .hero__title {
+      font-size: $fs-header-desktop;
+      line-height: $lh-header-desktop;
+      letter-spacing: -0.52px;
+      margin-bottom: 0.688rem;
+    }
+  }
+
+  .form {
+    gap: 1.25rem;
+    padding: 2.5rem;
+
+    .form__input {
+      padding: 0.938rem 2rem;
+    }
+
+    .form__terms {
+      margin-top: -0.75rem;
+    }
+  }
+}

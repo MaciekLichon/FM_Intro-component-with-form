@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Frontend Mentor | Intro component with sign up form</title>
+
+</head>
+<body>
+
+  <main class="container">
+
+    <div class="hero">
+      <h1 class="hero__title">
+        Learn to code by watching others
+      </h1>
+      <p class="hero__description">
+        See how experienced developers solve problems in real-time. Watching scripted tutorials is great, but understanding how developers think is invaluable.
+      </p>
+    </div>
+
+    <div class="formContainer">
+
+      <button class="button button-trial">
+        <span>Try it free 7 days</span> then $20/mo. thereafter
+      </button>
+
+      <form class="form" novalidate>
+        <div class="form__inputContainer">
+          <input class="form__input" placeholder="First Name" type="text">
+          <p class="form__errorMsg"><i>First Name cannot be empty</i></p>
+        </div>
+        <div class="form__inputContainer">
+          <input class="form__input" placeholder="Last Name" type="text">
+          <p class="form__errorMsg"><i>Last Name cannot be empty</i></p>
+        </div>
+        <div class="form__inputContainer">
+          <input class="form__input" placeholder="Email Address" type="email">
+          <p class="form__errorMsg"><i>Looks like this is not an email</i></p>
+        </div>
+        <div class="form__inputContainer">
+          <input class="form__input" placeholder="Password" type="password">
+          <p class="form__errorMsg"><i>Password cannot be empty</i></p>
+        </div>
+
+        <button type="submit" class="button button-submit">
+          Claim your free trial
+        </button>
+
+        <p class="form__terms">
+          By clicking the button, you are agreeing to our 
+          <a href="" class="form__termsLink">Terms and Services</a>
+        </p>
+      </form>
+
+    </div>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+@import './variables.scss';
+
+body {
+  background-image: url('../images/bg-intro-mobile.png');
+  background-color: $clr-red;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  font-family: $ff-regular;
+  font-size: $fs-regular;
+  font-weight: $fw-regular;
+  color: $clr-white;
+  padding: 0 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.button {
+  color: $clr-white;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: $fs-buttons;
+  line-height: $lh-buttons;
+}
+
+.button-trial {
+  border-radius: 10px;
+  background-color: $clr-purple;
+  box-shadow: 0px 8px 0px rgba(0, 0, 0, 0.14688);
+  padding: 1.125rem 4rem;
+
+  span { font-weight: $fw-heavy; }
+}
+
+.button-submit {
+  background-color: $clr-green;
+  text-transform: uppercase;
+  padding: 0.938rem;
+  box-shadow: inset 0px -4px 0px rgba(0, 0, 0, 0.0908818);
+  border-radius: 5px;
+  font-weight: $fw-bold;
+  letter-spacing: 1px;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: rgba(119, 226, 179, 1);
+  }
+}
+
+@media (min-width: 768px) {
+
+  body {
+    background-image: url('../images/bg-intro-desktop.png');
+  }
+
+  .container {
+    flex-direction: row;
+    align-items: center;
+    min-height: 100%;
+    gap: 30px;
+  }
+}
